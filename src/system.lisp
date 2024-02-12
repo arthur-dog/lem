@@ -24,7 +24,8 @@
   (let ((status
           (nth-value 2
                      (uiop:run-program (list "which" program)
-                                       :ignore-error-status t))))
+                                       :ignore-error-status t
+                                       :force-shell nil))))
     (= status 0)))
 
 (defun open-external-file (pathname)
